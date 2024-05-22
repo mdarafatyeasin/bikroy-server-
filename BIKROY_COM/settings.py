@@ -33,6 +33,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1','https://bikroy-server.onrender.com/',]
+
 env = environ.Env()
 environ.Env.read_env()
 
