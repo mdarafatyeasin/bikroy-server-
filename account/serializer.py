@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import basicInfo, additionalInfo, userInfo
 from django.contrib.auth.models import User
+from adds.models import addModel
 
 class BasicInfoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -60,3 +61,4 @@ class userLoginSerializer(serializers.Serializer):
 
     class Meta:
         fields = ['username', 'password']
+

@@ -12,6 +12,7 @@ from django.contrib.auth import authenticate, logout
 from rest_framework.authtoken.models import Token
 from django.http import JsonResponse
 
+
 # Create your views here.
 # email confirm_link
 def send_confirmation_email(user, confirm_link, subject, template):
@@ -91,3 +92,5 @@ def UserLogOut(request, id, token):
                 return JsonResponse({'status': 'token does not exist'})
     except (User.DoesNotExist, Token.DoesNotExist):
         return JsonResponse({'status': 'invalid user'})
+    
+

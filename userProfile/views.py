@@ -7,6 +7,10 @@ from rest_framework import status, response
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from rest_framework import generics
+from adds.models import addModel
+from adds.serializers import addSerializer
+from django.http import JsonResponse
+
 
 class basicInfoViewset(APIView):
      def get_object(self, id):
@@ -88,4 +92,8 @@ class UserProfileView(generics.RetrieveUpdateAPIView):
             'message': 'update success',
             'updated_data': serializer.data
         }, status=status.HTTP_200_OK)
-
+    
+def userAdds(request, id):
+    products = addModel.objects.filter(author=id)
+    serializer = addSerializer(products, many=True)  
+    return JsonResponse(serializer.data, safe=False)  

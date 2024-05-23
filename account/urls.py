@@ -6,4 +6,5 @@ urlpatterns = [
     path('active/<uid64>/<token>', activate, name='activation'),
     path('login/', userLogin.as_view(), name='login'),
     path('logout/<int:id>/<token>', UserLogOut, name='logout'),
+    
 ]
