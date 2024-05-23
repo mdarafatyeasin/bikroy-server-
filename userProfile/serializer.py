@@ -6,11 +6,13 @@ class profileBasicInfo(serializers.ModelSerializer):
     class Meta:
         model = basicInfo
         exclude = ['profile_picture']
+        read_only_fields = ['user']
 
 class profileAdditionalInfo(serializers.ModelSerializer):
     class Meta:
         model = additionalInfo
         fields = "__all__"
+        read_only_fields = ['user']
 
 # class profileUserInfo(serializers.ModelSerializer):
 #     class Meta:
